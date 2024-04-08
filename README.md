@@ -24,13 +24,13 @@ Access your ThingsBoard instance and configure it to display sensor data from th
 1. Clone the repository:  
 `git clone https://github.com/NikosFragkiskatos/MQTTIoT.git`  
 
-2. Start the Mosquitto MQTT broker with Docker:
+2. Start the Mosquitto MQTT broker with Docker:  
 `docker-compose -f docker-compose.yml up -d`
 
-3. Install the required Python libraries for publishing sensor data:
+3. Install the required Python libraries for publishing sensor data:  
 `pip install paho-mqtt`
 
-4. Navigate to the project directory and install node.js dependencies.
+4. Navigate to the project directory and install node.js dependencies.  
 `npm install`
 
 ### Usage  
