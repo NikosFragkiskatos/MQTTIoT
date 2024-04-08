@@ -1,40 +1,59 @@
 # ThingsBoard IoT Project with Mosquitto MQTT
 
-## Introduction
+This project is a comprehensive demonstration of real-time data streaming and analysis using ThingsBoard, an open-source IoT platform, and Mosquitto MQTT, an open-source message broker. The Internet of Things (IoT) is expanding rapidly, connecting devices and allowing them to interact in innovative ways. This project is divided into two parts: In Part 1, we set up an environment to produce, publish, and send temperature and humidity data to ThingsBoard and Firebase. Part 2 expands upon this by adding an alarm rule chain in ThingsBoard to monitor data against a threshold and send notifications to Firebase. This is part of my coursework submission for the MIT Data Engineering program.
 
-This project showcases a real-time IoT application using ThingsBoard, Google's Firebase DB, and Mosquitto MQTT to produce and consume hypothetical sensor data. The Internet of Things (IoT) is revolutionizing the way we interact with the physical world. Through sensors and connectivity, everyday objects can communicate and perform tasks, making environments smarter and more responsive. In this project, we demonstrate the integration of sensor data with ThingsBoard, an IoT platform that provides device management, data collection, processing, and visualization, all essential components in the IoT ecosystem. This is part of the practical coursework I completed for the MIT Data Engineering program.  
-
-In the files of this project, you will find also two word files; Part1-GeneralSetup, and Part2-AlarmSetup. Those files include screenshots of the execution of the project and describe details of the steps taken.
-
-## Installation
-  
-### Part 1: Mosquitto MQTT Broker Setup
-Ensure Docker is installed and running. Use the provided `docker-compose.yml` to set up the Mosquitto MQTT broker.
-
-### Part 2: ThingsBoard Setup
-Access your ThingsBoard instance and configure it to display sensor data from the MQTT broker.
+## Part 1: Streaming Live Data to ThingsBoard
 
 ### Prerequisites
-- Docker for running the Mosquitto MQTT broker
-- Python 3.x for running the data publisher script
-- Node.js for the server-side consumption of MQTT data
+- Docker for running Mosquitto and ThingsBoard
+- Python 3.x for running the publisher script
 - Access to a ThingsBoard instance
-  
-### Installation
-1. Clone the repository:  
-`git clone https://github.com/NikosFragkiskatos/MQTTIoT.git`  
+- Access to Firebase for data storage
 
-2. Start the Mosquitto MQTT broker with Docker:  
-`docker-compose -f docker-compose.yml up -d`
+### Installation & Setup
+1. **Mosquitto MQTT Broker Setup:**
+   - Prepare the `Project_24_Docker` folder structure as specified and place the `docker-compose.yml` file accordingly.
+   - Use Docker to initialize the Mosquitto MQTT broker.
 
-3. Install the required Python libraries for publishing sensor data:  
-`pip install paho-mqtt`
+2. **Paho MQTT Client Library:**
+   - Install the `paho-mqtt` Python client library for MQTT communication.
 
-4. Navigate to the project directory and install node.js dependencies.  
-`npm install`
+3. **ThingsBoard & Firebase Configuration:**
+   - Configure ThingsBoard and Firebase to display sensor data and create a `temperature` field in Firebase Realtime Database.
 
-### Usage  
-#### Starting the MQTT Publisher  
-Execute the `TBPublish.py` script to publish sensor data:  
-`python TBpublish.py`  
+### Usage
+1. **Run MQTT Publisher:**
+   - Execute the `TBPublish.py` script to simulate the publishing of temperature and humidity data.
+
+2. **ThingsBoard Data Visualization:**
+   - Verify that the ThingsBoard instance is receiving data from the MQTT broker and visualize it on the dashboard.
+
+## Part 2: Analyzing Live Streaming Data Using ThingsBoard
+
+### Setup
+1. **Firebase Alarm Configuration:**
+   - In Firebase, create an `alarms` field and set its initial value to zero.
+
+2. **ThingsBoard Alarm Rule Chains:**
+   - In ThingsBoard, create and configure the `CreateAndClearAlarms`, `TempToFirebase`, and `AlarmToFirebase` rule chains as specified.
+   - Set up API call nodes within these rule chains to post data to the corresponding fields in Firebase Realtime Database.
+
+### Usage
+1. **Integrate Rule Chains:**
+   - Integrate the `CreateAndClearAlarms` rule chain into the Root Rule Chain in ThingsBoard and verify the setup.
+
+2. **Monitor Firebase Realtime Database:**
+   - Observe the `alarms` and `temperature` fields in Firebase for live updates triggered by the rule chains.
+
+## Contributing
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make to the MQTT and ThingsBoard project are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+This project is licensed under the MIT License - see the `LICENSE.txt` file for details.
 
