@@ -2,6 +2,12 @@
 
 This project is a comprehensive demonstration of real-time data streaming and analysis using ThingsBoard, an open-source IoT platform, and Mosquitto MQTT, an open-source message broker. The Internet of Things (IoT) is expanding rapidly, connecting devices and allowing them to interact in innovative ways. This project is divided into two parts: In Part 1, we set up an environment to produce, publish, and send temperature and humidity data to ThingsBoard and Firebase. Part 2 expands upon this by adding an alarm rule chain in ThingsBoard to monitor data against a threshold and send notifications to Firebase. This is part of my coursework submission for the MIT Data Engineering program.
 
+### How to follow this project  
+
+If you would like to just look over what was done in order to execute this project without running it, you can use the Word documents`Part1_GeneralMQTTSetup` and `Part2_ThingsBoardAlarmSetup`, found inside the folder `Project_24_Docker`.  
+
+Below you will find general guidlines/instructions that were given in order to execute this project. Using the two Word documents however is recommended.  
+
 ## Part 1: Streaming Live Data to ThingsBoard
 
 ### Prerequisites
@@ -12,10 +18,10 @@ This project is a comprehensive demonstration of real-time data streaming and an
 
 ### Installation & Setup
 1. **Mosquitto MQTT Broker Setup:**
-   - Prepare the `Project_24_Docker` folder structure as specified and place the `docker-compose.yml` file accordingly.
-   - Use Docker to initialize the Mosquitto MQTT broker.
-   - The folder structure should look like this:
-   ![Docker Folder Structure](1_ProjectFolderStructure.png)
+   - Prepare the `Project_24_Docker` folder structure as shown below.
+   - Use Docker to initialize the Mosquitto MQTT broker - execute the `docker-compose.yml`,
+   - The folder structure should look like this:  
+   ![Docker Folder Structure](1_ProjectFolderStructure.png)  
    ![MQTT_Folder_Strucutre](2_ProjectMQTTFolderStructure.png)
 
 2. **Paho MQTT Client Library:**
