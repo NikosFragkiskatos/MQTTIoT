@@ -14,6 +14,9 @@ This project is a comprehensive demonstration of real-time data streaming and an
 1. **Mosquitto MQTT Broker Setup:**
    - Prepare the `Project_24_Docker` folder structure as specified and place the `docker-compose.yml` file accordingly.
    - Use Docker to initialize the Mosquitto MQTT broker.
+   - The folder structure should look like this:
+   ![Docker Folder Structure](1_ProjectFolderStructure.png)
+   ![MQTT_Folder_Strucutre](2_ProjectMQTTFolderStructure.png)
 
 2. **Paho MQTT Client Library:**
    - Install the `paho-mqtt` Python client library for MQTT communication.
