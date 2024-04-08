@@ -4,7 +4,7 @@ This project is a comprehensive demonstration of real-time data streaming and an
 
 ### How to follow this project  
 
-If you would like to just look over what was done in order to execute this project without running it, you can use the Word documents`Part1_GeneralMQTTSetup` and `Part2_ThingsBoardAlarmSetup`, found inside the folder `Project_24_Docker`.  
+If you would like to just look over what was done in order to execute this project without running it, you can use the Word documents`Part1_GeneralMQTTSetup` and `Part2_ThingsBoardAlarmSetup`, found inside the root folder.  
 
 Below you will find general guidlines/instructions that were given in order to execute this project. Using the two Word documents however is recommended.  
 
